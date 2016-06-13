@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
-public class karta extends AppCompatActivity {
+public class PodstawoweInfo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class karta extends AppCompatActivity {
         }
 
         public void onSwipeRight() {
+
         }
 
         public void onSwipeLeft() {

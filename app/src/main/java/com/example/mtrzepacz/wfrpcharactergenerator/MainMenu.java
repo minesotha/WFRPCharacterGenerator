@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+
 public class MainMenu extends AppCompatActivity {
 
     @Override
@@ -14,7 +15,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void newChara_click(View v) {
-        startActivity(new Intent(MainMenu.this, karta.class));
+        startActivity(new Intent(MainMenu.this, PodstawoweInfo.class));
     }
 
 
