@@ -117,10 +117,15 @@
                     android:layout_width="211dp"
                     android:inputType="number"
                     android:layout_height="wrap_content"
-                    android:id="@+id/allAP" />
+                    android:id="@+id/allPD" />
             </TableRow>
 
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -130,12 +135,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="płeć"
-                    android:id="@+id/textView2" />
+                    android:id="@+id/textView2"
+                    android:layout_gravity="center_vertical" />
 
-                <EditText
-                    android:layout_width="211dp"
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/płeć" />
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/plec_k"
+                        android:id="@+id/radioButton2"
+                        android:layout_column="1"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mężczyzna"
+                        android:id="@+id/plec_m"
+                        android:layout_column="1"
+                        android:checked="false" />
+                </RadioGroup>
+
             </TableRow>
 
             <TableRow

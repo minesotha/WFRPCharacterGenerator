@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -57,8 +58,28 @@ public class PodstawoweInfo extends AppCompatActivity {
         currText = (EditText)findViewById(R.id.imie_nazwisko);
         Postac.getInstance().imie_naziwsko = currText.getText().toString();
         //TODO - przełączanie płci
-        currText = (EditText)findViewById(R.id.płeć);
-        Postac.getInstance().czyMężczyzna = true;
+        RadioButton rb = (RadioButton)findViewById(R.id.plec_m);
+        if(rb.isChecked()){
+            Postac.getInstance().czyMężczyzna = true;
+        }
+        else{
+            Postac.getInstance().czyMężczyzna=false;
+        }
+
+
+
+        try {
+            currText = (EditText) findViewById(R.id.currPD);
+        }
+        catch(NumberFormatException e){
+            Postac.getInstance().expCurrent =  Integer.parseInt(currText.getText().toString());
+        }
+        try{
+            currText = (EditText)findViewById(R.id.allPD);
+        }
+        catch(NumberFormatException e) {
+            Postac.getInstance().expAll = Integer.parseInt(currText.getText().toString());
+        }
         currText = (EditText)findViewById(R.id.pochodzenie);
         Postac.getInstance().miejsce_urodzenia = currText.getText().toString();
         currText = (EditText)findViewById(R.id.rasa);
