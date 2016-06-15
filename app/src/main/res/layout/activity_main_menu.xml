@@ -28,7 +28,7 @@
             android:layout_width="461dp"
             android:layout_height="288dp"
             android:id="@+id/imageView"
-            android:src="@drawable/Imperial_cross"
+            android:src="@drawable/imperialcross"
             android:layout_alignParentTop="true"
             android:layout_above="@+id/tableLayout" />
 

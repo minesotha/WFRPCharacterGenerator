@@ -39,9 +39,8 @@ public class PodstawoweInfo extends AppCompatActivity {
                                      startActivity(new Intent(PodstawoweInfo.this, Cechy1.class));
                                  }
                                  else if(deltaX >0){
-                                     Toast.makeText(PodstawoweInfo.this,
-                                             String.valueOf(deltaX),
-                                             Toast.LENGTH_SHORT).show();
+                                     ApplyChanges();
+                                    finish();
                                  }
                                  break;
                          }
