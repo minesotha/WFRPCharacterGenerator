@@ -5,10 +5,22 @@ import java.util.List;
 /**
  * Created by mtrzepacz on 13.06.2016.
  */
-public class Postac {
+public final class Postac {
+
+    //konstruktor
+    private static Postac instance = null;
+    protected Postac(){
+        //TODO - losowane rzeczy?
+    }
+    public static Postac getInstance(){
+        if(instance==null){
+            instance = new Postac();
+        }
+        return instance;
+    }
+
     //podstawowe info
-    public String imie;
-    public String nazwisko;
+    public String imie_naziwsko;
     public String rasa;
     public String profesja;
     public int expAll;
@@ -20,10 +32,11 @@ public class Postac {
     public String kolor_oczu;
     public Boolean czyMężczyzna;
     public int waga;
-    public  String wzrost;
-    public  int rodzeństwo;
+    public  int wzrost;
+    public  String rodzeństwo;
     public  String miejsce_urodzenia;
     public  String znaki_szczegolne;
+    public  String znak_gwiezdny;
 
     //Cechy główne
     /**walka wręcz*/
@@ -78,10 +91,6 @@ public class Postac {
     //ekwpunek
     //TODO - klasa ekwipunek
 
-    //konstruktor
-    public Postac(){
-        //TODO - losowane rzeczy?
 
-    }
 
 }

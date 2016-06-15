@@ -32,39 +32,7 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="płeć"
-                    android:id="@+id/textView2" />
-
-                <EditText
-                    android:layout_width="211dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText2" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="pochodzenie"
-                    android:id="@+id/textView5" />
-
-                <EditText
-                    android:layout_width="211dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText5" />
+                    android:id="@+id/imie_nazwisko" />
             </TableRow>
 
             <TableRow
@@ -80,7 +48,110 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText6" />
+                    android:id="@+id/rasa" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="profesja"
+                    android:id="@+id/textView65" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profesja" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="poprzednia profesja"
+                    android:id="@+id/textView64" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/poprzedniaprofesja" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aktualne PD"
+                    android:id="@+id/textview22" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/currPD" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wydane PD"
+                    android:id="@+id/textView634" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:inputType="number"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/allAP" />
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="płeć"
+                    android:id="@+id/textView2" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/płeć" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pochodzenie"
+                    android:id="@+id/textView5" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pochodzenie" />
             </TableRow>
 
             <TableRow
@@ -96,7 +167,8 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText7" />
+                    android:inputType="number"
+                    android:id="@+id/wzrost" />
             </TableRow>
 
             <TableRow
@@ -111,8 +183,9 @@
 
                 <EditText
                     android:layout_width="211dp"
+                    android:inputType="number"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText8" />
+                    android:id="@+id/waga" />
             </TableRow>
 
             <TableRow
@@ -128,7 +201,7 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText9" />
+                    android:id="@+id/wlosy" />
             </TableRow>
 
             <TableRow
@@ -144,7 +217,7 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText10" />
+                    android:id="@+id/oczy" />
             </TableRow>
 
             <TableRow
@@ -159,24 +232,9 @@
 
                 <EditText
                     android:layout_width="211dp"
+                    android:inputType="number"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText11" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="miejsce urodzenia"
-                    android:id="@+id/textView12" />
-
-                <EditText
-                    android:layout_width="211dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText12" />
+                    android:id="@+id/wiek" />
             </TableRow>
 
             <TableRow
@@ -192,7 +250,7 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText13" />
+                    android:id="@+id/rodzenstwo" />
 
             </TableRow>
 
@@ -209,7 +267,23 @@
                 <EditText
                     android:layout_width="211dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText14" />
+                    android:id="@+id/znak" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="znaki szczegolne"
+                    android:id="@+id/textView15" />
+
+                <EditText
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/znakiSzczeg" />
 
             </TableRow>
 

@@ -9,6 +9,7 @@ import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -24,7 +25,6 @@ public class PodstawoweInfo extends AppCompatActivity {
                  new View.OnTouchListener() {
                      @Override
                      public boolean onTouch(View v, MotionEvent event) {
-                         // TODO Auto-generated method stub
                          switch (event.getAction()) {
                              case MotionEvent.ACTION_DOWN:
                                  x1 = event.getX();
@@ -33,12 +33,14 @@ public class PodstawoweInfo extends AppCompatActivity {
                                  x2 = event.getX();
                                  float deltaX = x2 - x1;
                                  if (deltaX < 0) {
+                                     ApplyChanges();
                                      Toast.makeText(PodstawoweInfo.this,
-                                             "Right to Left swipe",
+                                             String.valueOf(deltaX),
                                              Toast.LENGTH_SHORT).show();
-                                 }else if(deltaX >0){
+                                 }
+                                 else if(deltaX >0){
                                      Toast.makeText(PodstawoweInfo.this,
-                                             "Left to Right swipe",
+                                             String.valueOf(deltaX),
                                              Toast.LENGTH_SHORT).show();
                                  }
                                  break;
@@ -47,6 +49,55 @@ public class PodstawoweInfo extends AppCompatActivity {
                          return false;
                      }
                  });
+    }
+
+    void ApplyChanges(){
+        EditText currText;
+
+        currText = (EditText)findViewById(R.id.imie_nazwisko);
+        Postac.getInstance().imie_naziwsko = currText.getText().toString();
+        //TODO - przełączanie płci
+        currText = (EditText)findViewById(R.id.płeć);
+        Postac.getInstance().czyMężczyzna = true;
+        currText = (EditText)findViewById(R.id.pochodzenie);
+        Postac.getInstance().miejsce_urodzenia = currText.getText().toString();
+        currText = (EditText)findViewById(R.id.rasa);
+        Postac.getInstance().rasa = currText.getText().toString();
+        currText = (EditText)findViewById(R.id.wzrost);
+        try {
+            Postac.getInstance().wzrost = Integer.parseInt(currText.getText().toString());
+        }
+        catch(NumberFormatException e){
+            Postac.getInstance().wzrost =0;
+        }
+        currText = (EditText)findViewById(R.id.waga);
+        try {
+            Postac.getInstance().waga = Integer.parseInt(currText.getText().toString());
+        }
+        catch(NumberFormatException e){
+            Postac.getInstance().waga = 0;
+        }
+        currText = (EditText)findViewById(R.id.wlosy);
+        Postac.getInstance().kolor_wlosow = currText.getText().toString();
+        currText = (EditText)findViewById(R.id.oczy);
+        Postac.getInstance().kolor_oczu = currText.getText().toString();
+        currText = (EditText)findViewById(R.id.wiek);
+        try {
+            Postac.getInstance().wiek = Integer.parseInt(currText.getText().toString());
+        }
+        catch(NumberFormatException e){
+            Postac.getInstance().wiek= 0;
+        }
+        currText = (EditText)findViewById(R.id.rodzenstwo);
+        Postac.getInstance().rodzeństwo = currText.getText().toString();
+        currText = (EditText)findViewById(R.id.znak);
+        Postac.getInstance().znak_gwiezdny = currText.getText().toString();
+        currText = (EditText)findViewById(R.id.znakiSzczeg);
+        Postac.getInstance().znaki_szczegolne = currText.getText().toString();
+
+
+
+
     }
 
 }
