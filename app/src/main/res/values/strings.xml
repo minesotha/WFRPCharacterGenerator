@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WFRPCharacterGenerator</string>
-    <string name="nowaPostac">New</string>
-    <string name="wyjdzZProgramu">Exit</string>
+    <string name="nowaPostac">Nowa postac</string>
+    <string name="wczytaj">Wczytaj</string>
+    <string name="zapisz">Zapisz</string>
     <string name="plec_k">kobieta</string>
 </resources>

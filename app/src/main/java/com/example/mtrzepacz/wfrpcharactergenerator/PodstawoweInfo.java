@@ -1,6 +1,7 @@
 package com.example.mtrzepacz.wfrpcharactergenerator;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,9 +36,7 @@ public class PodstawoweInfo extends AppCompatActivity {
                                  float deltaX = x2 - x1;
                                  if (deltaX < 0) {
                                      ApplyChanges();
-                                     Toast.makeText(PodstawoweInfo.this,
-                                             String.valueOf(deltaX),
-                                             Toast.LENGTH_SHORT).show();
+                                     startActivity(new Intent(PodstawoweInfo.this, Cechy1.class));
                                  }
                                  else if(deltaX >0){
                                      Toast.makeText(PodstawoweInfo.this,
