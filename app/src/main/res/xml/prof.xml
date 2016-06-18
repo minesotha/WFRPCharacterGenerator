@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<profesja>
+        <nazwa>Akolita</nazwa>
+        <czyPodstawowa>1</czyPodstawowa>
+        <WW>5</WW>
+        <US>5</US>
+        <K>0</K>
+        <ODP>5</ODP>
+        <ZR>0</ZR>
+        <INT>10</INT>
+        <SW>10</SW>
+        <OGD>10</OGD>
+        <A>0</A>
+        <ZYW>2</ZYW>
+        <SZY>0</SZY>
+        <MAG>0</MAG>
+</profesja>

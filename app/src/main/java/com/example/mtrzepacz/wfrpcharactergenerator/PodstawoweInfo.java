@@ -34,11 +34,11 @@ public class PodstawoweInfo extends AppCompatActivity {
                              case MotionEvent.ACTION_UP:
                                  x2 = event.getX();
                                  float deltaX = x2 - x1;
-                                 if (deltaX < 0) {
+                                 if (deltaX < -100) {
                                      ApplyChanges();
                                      startActivity(new Intent(PodstawoweInfo.this, Cechy1.class));
                                  }
-                                 else if(deltaX >0){
+                                 else if(deltaX >100){
                                      ApplyChanges();
                                     finish();
                                  }
