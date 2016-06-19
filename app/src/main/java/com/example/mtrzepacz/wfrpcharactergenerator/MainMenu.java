@@ -37,8 +37,8 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void newChara_click(View v) {
+        Postac.Wyczysc();
         Intent i = new Intent(MainMenu.this, PodstawoweInfo.class);
-        i.putExtra("startNew",true);
         startActivity(i);
     }
 

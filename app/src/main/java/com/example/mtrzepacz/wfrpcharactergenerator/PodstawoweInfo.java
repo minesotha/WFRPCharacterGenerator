@@ -31,45 +31,6 @@ public class PodstawoweInfo extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-
-    private void ClearAllFields(){
-        currText= (EditText) findViewById(R.id.imie_nazwisko);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.rasa);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.profesja);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.poprzedniaprofesja);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.currPD);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.allPD);
-        currText.setText("");
-
-        RadioButton rb = (RadioButton) findViewById(R.id.plec_m);
-        RadioButton rb2 = (RadioButton) findViewById(R.id.plec_k);
-            rb2.setChecked(true);
-            rb.setChecked(false);
-
-        currText = (EditText) findViewById(R.id.pochodzenie);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.wzrost);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.waga);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.wlosy);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.oczy);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.wiek);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.rodzenstwo);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.znak);
-        currText.setText("");
-        currText = (EditText) findViewById(R.id.znakiSzczeg);
-        currText.setText("");
-    }
     private void PopulateFields(){
         currText= (EditText) findViewById(R.id.imie_nazwisko);
         currText.setText(Postac.getInstance().imie_naziwsko);
@@ -120,21 +81,7 @@ public class PodstawoweInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_karta);
-
-
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            Boolean startNew = extras.getBoolean("startNew");
-            if(startNew==true){
-                ClearAllFields();
-            }
-            else {
-                PopulateFields();
-            }
-        }
-        else{
             PopulateFields();
-        }
 
 
 
