@@ -6,8 +6,10 @@ import android.content.res.XmlResourceParser;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -27,10 +29,14 @@ public class MainMenu extends AppCompatActivity {
      */
 //    private GoogleApiClient client;
 
+    ViewFlipper viewFlipper;
+    private float lastX;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -70,6 +76,45 @@ public class MainMenu extends AppCompatActivity {
 
         startActivity(new Intent(MainMenu.this, PodstawoweInfo.class));
 
+    }
+
+
+
+    public boolean onTouchEvent(MotionEvent touchevent) {
+        switch (touchevent.getAction()) {
+
+            case MotionEvent.ACTION_DOWN: {
+                lastX = touchevent.getX();
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+                float currentX = touchevent.getX();
+
+                if (lastX < currentX) {
+
+                    if (viewFlipper.getDisplayedChild() == 0)
+                        break;
+
+                    viewFlipper.setInAnimation(this, R.anim.in_from_left);
+                    viewFlipper.setOutAnimation(this, R.anim.out_to_right);
+                    // Show The Previous Screen
+                    viewFlipper.showPrevious();
+                }
+
+                // if right to left swipe on screen
+                if (lastX > currentX) {
+                    if (viewFlipper.getDisplayedChild() == 4)
+                        break;
+
+                    viewFlipper.setInAnimation(this, R.anim.in_from_right);
+                    viewFlipper.setOutAnimation(this, R.anim.out_to_left);
+                    // Show the next Screen
+                    viewFlipper.showNext();
+                }
+                break;
+            }
+        }
+        return false;
     }
 
 
