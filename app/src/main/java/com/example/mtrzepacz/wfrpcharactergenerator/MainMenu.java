@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -29,6 +30,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
+import org.simpleframework.xml.strategy.Strategy;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,6 +38,7 @@ import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -92,10 +95,6 @@ public class MainMenu extends AppCompatActivity {
         viewFlipper.setInAnimation(this, R.anim.in_from_right);
         viewFlipper.setOutAnimation(this, R.anim.out_to_left);
         viewFlipper.showNext();
-
-        profesja= dbHelper.getProfesja("akolita");
-
-
 //        Intent i = new Intent(MainMenu.this, PodstawoweInfo.class);
 //        startActivity(i);
     }
@@ -222,7 +221,7 @@ public class MainMenu extends AppCompatActivity {
 
                 // if right to left swipe on screen
                 if (lastX > currentX) {
-                    if (viewFlipper.getDisplayedChild() == 4)
+                    if (viewFlipper.getDisplayedChild() == 3)
                         break;
                     if(isFirstTime){
                         Postac.Wyczysc();
@@ -282,6 +281,12 @@ public class MainMenu extends AppCompatActivity {
 
         currText = (EditText) findViewById(R.id.profesja);
         currText.setText(Postac.getInstance().profesja);
+        if(nazwyProfesji.indexOf(Postac.getInstance().profesja)!=-1){
+            profesja= dbHelper.getProfesja(currText.getText().toString());
+        }
+        else{
+            profesja=null;
+        }
 
         currText = (EditText) findViewById(R.id.poprzedniaprofesja);
         currText.setText(Postac.getInstance().poprzedniaprofesja);
@@ -350,8 +355,6 @@ public class MainMenu extends AppCompatActivity {
 
 
 
-
-
         //cechy2
 
         currText = (EditText) findViewById(R.id.baseA);
@@ -382,9 +385,91 @@ public class MainMenu extends AppCompatActivity {
 
 
     void UpdateFinalFields(){
+        EditText currText;
+
+        //bonusy1
+        TextView tw;
+        tw = (TextView) findViewById(R.id.bonusWW);
+        try{
+            Postac.getInstance().walkaWreczPlus = Integer.parseInt(tw.getText().toString().substring(1));
+        }
+        catch (Exception e){
+
+        }
+        tw = (TextView) findViewById(R.id.bonusUS);
+        try{
+
+            Postac.getInstance().umiejetnosciStrzeleckiePlus = Integer.parseInt(tw.getText().toString().substring(1));
+        }
+        catch (Exception e){
 
 
-        EditText currText = (EditText) findViewById(R.id.sumWW);
+        }
+
+
+        tw = (TextView) findViewById(R.id.bonusK);
+        try{
+            Postac.getInstance().krzepaPlus = Integer.parseInt(tw.getText().toString().substring(1));
+
+        }
+        catch (Exception e){
+
+        }
+
+
+        tw = (TextView) findViewById(R.id.bonusOdp);
+        try{
+
+            Postac.getInstance().odpornoscPlus = Integer.parseInt(tw.getText().toString().substring(1));
+        }
+        catch (Exception e){
+
+        }
+
+
+        tw = (TextView) findViewById(R.id.bonusZr);
+        try{
+
+            Postac.getInstance().zrecznoscPlus = Integer.parseInt(tw.getText().toString().substring(1));
+        }
+        catch (Exception e){
+
+        }
+
+
+        tw = (TextView) findViewById(R.id.bonusInt);
+        try{
+            Postac.getInstance().inteligencjaPlus = Integer.parseInt(tw.getText().toString().substring(1));
+
+        }
+        catch (Exception e){
+
+        }
+
+
+        tw = (TextView) findViewById(R.id.bonusSW);
+        try{
+
+            Postac.getInstance().silaWoliPlus = Integer.parseInt(tw.getText().toString().substring(1));
+        }
+        catch (Exception e){
+
+        }
+
+
+        tw = (TextView) findViewById(R.id.bonusOgd);
+        try{
+            Postac.getInstance().ogladaPlus = Integer.parseInt(tw.getText().toString().substring(1));
+
+        }
+        catch (Exception e){
+
+        }
+
+
+
+
+        currText = (EditText) findViewById(R.id.sumWW);
         currText.setText(String.valueOf(Postac.getInstance().walkaWrecz+Postac.getInstance().walkaWreczPlus));
 
         currText = (EditText) findViewById(R.id.sumUS);
@@ -531,6 +616,10 @@ public class MainMenu extends AppCompatActivity {
         currText = (EditText) findViewById(R.id.baseOgd);
         Postac.getInstance().oglada = Integer.parseInt(currText.getText().toString());
 
+
+
+
+
         //cechy2
         currText = (EditText) findViewById(R.id.baseA);
         Postac.getInstance().ataki = Integer.parseInt(currText.getText().toString());
@@ -625,10 +714,131 @@ public class MainMenu extends AppCompatActivity {
 
                 EditText currText = (EditText)view;
                 currText.setText(wybrana);
+                profesja= dbHelper.getProfesja(wybrana);
             }
         });
         Utilis.hideKeyboard(this);
         builder.show();
+
+    }
+
+    public void onBonusClick(View view) {
+        if(profesja!=null){
+            TextView currText = (TextView)view;
+            int value = Integer.parseInt(currText.getText().toString().substring(1));
+
+            switch (view.getResources().getResourceEntryName(view.getId())){
+                case "bonusWW":
+                    if(value<Integer.parseInt(profesja.walkaWrecz)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;
+                case "bonusUS":
+                    if(value<Integer.parseInt(profesja.umiejetnosciStrzeleckie)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;case "bonusK":
+                    if(value<Integer.parseInt(profesja.krzepa)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;case "bonusOdp":
+                    if(value<Integer.parseInt(profesja.odpornosc)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;case "bonusZr":
+                    if(value<Integer.parseInt(profesja.zrecznosc)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;case "bonusInt":
+                    if(value<Integer.parseInt(profesja.inteligencja)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;case "bonusSW":
+                    if(value<Integer.parseInt(profesja.silaWoli)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;case "bonusOgd":
+                    if(value<Integer.parseInt(profesja.oglada)){
+                        value+=5;
+                    }
+                    else{
+                        value=0;
+                    }
+                    break;
+
+
+
+
+
+
+
+
+
+            }
+
+            currText.setText("+"+String.valueOf(value));
+
+        }
+
+
+
+    }
+
+    public void onLosujCechyCLick(View view) {
+        Random random = new Random();
+        int min=2;
+        int max=21;
+        int wylosowano;
+
+
+
+        wylosowano =20+ random.nextInt(max-min)+min;
+        EditText currText = (EditText) findViewById(R.id.baseWW);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano = 20+random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseUS);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano =20+ random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseK);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano =20+random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseOdp);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano =20+ random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseZr);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano = 20+random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseInt);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano = 20+random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseSW);
+        currText.setText(String.valueOf(wylosowano));
+        wylosowano = 20+random.nextInt(max-min)+min;
+        currText = (EditText) findViewById(R.id.baseOgd);
+        currText.setText(String.valueOf(wylosowano));
+
+
 
     }
 }
