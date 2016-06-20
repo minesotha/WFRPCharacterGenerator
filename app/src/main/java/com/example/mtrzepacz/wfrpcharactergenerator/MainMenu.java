@@ -70,7 +70,7 @@ public class MainMenu extends AppCompatActivity {
         PodstawoweInfoApplyChanges();
         Serializer serializer = new Persister();
         //File file = new File(getFilesDir(), "postac.xml");
-        File file = new File(getAlbumStorageDir(this),"postac.xml");
+        File file = new File(getAlbumStorageDir(this),Postac.getInstance().imie_naziwsko+".xml");
 
 
 
@@ -84,20 +84,47 @@ public class MainMenu extends AppCompatActivity {
 
     public void loadChara_click(View v) {
         Postac.Wyczysc();
-        Serializer serializer = new Persister();
-        File source = new File(getAlbumStorageDir(this), "postac.xml");
-        try {
-            // Profesja prof = serializer.read(Profesja.class, source);
-            Postac.setInstance(serializer.read(Postac.class, source));
-            //Postac.getInstance().imie_naziwsko = prof.getNazwa();
-            Toast.makeText(getBaseContext(), "Wczytano postac: "+Postac.getInstance().imie_naziwsko, Toast.LENGTH_SHORT).show();
-            PodstawoweInfoPopulateFields();
-        } catch (Exception e) {
-            e.printStackTrace();
+
+
+
+        File f = getAlbumStorageDir(this);
+        File file[] = f.listFiles();
+        final List<String> stuff = new ArrayList<String>();
+        for (int i=0; i < file.length; i++)
+        {
+            stuff.add(file[i].getName());
         }
 
+        final CharSequence[] postacie = stuff.toArray(new CharSequence[stuff.size()]);
 
-        // startActivity(new Intent(MainMenu.this, PodstawoweInfo.class));
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Wybierz postać do wczytania:");
+        builder.setItems(postacie, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on postacie[which]
+                File wybrana = new File(getAlbumStorageDir(getBaseContext()), stuff.get(which));
+
+
+                Serializer serializer = new Persister();
+                //File source = new File(getAlbumStorageDir(this), "postac.xml");
+                try {
+                    // Profesja prof = serializer.read(Profesja.class, source);
+                    Postac.setInstance(serializer.read(Postac.class, wybrana));
+                    //Postac.getInstance().imie_naziwsko = prof.getNazwa();
+                    Toast.makeText(getBaseContext(), "Wczytano postac: "+Postac.getInstance().imie_naziwsko, Toast.LENGTH_SHORT).show();
+                    PodstawoweInfoPopulateFields();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        builder.show();
+
+
+
+
+
 
     }
 
@@ -325,8 +352,6 @@ public class MainMenu extends AppCompatActivity {
 
 
     public void Wyslij_click(View view){
-
-
 
 
         File f = getAlbumStorageDir(this);
