@@ -320,13 +320,18 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
+
+
+
+
     public void Wyslij_click(View view){
 
-       // CharSequence postacie[] = new CharSequence[]{};// {"red", "green", "blue", "black"};
+
+
 
         File f = getAlbumStorageDir(this);
         File file[] = f.listFiles();
-        List<String> stuff = new ArrayList<String>();
+        final List<String> stuff = new ArrayList<String>();
         for (int i=0; i < file.length; i++)
         {
             stuff.add(file[i].getName());
@@ -335,35 +340,38 @@ public class MainMenu extends AppCompatActivity {
         final CharSequence[] postacie = stuff.toArray(new CharSequence[stuff.size()]);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Wybierz postać do wczytania:");
+        builder.setTitle("Wybierz postać do wysłania:");
         builder.setItems(postacie, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // the user clicked on colors[which]
+                // the user clicked on postacie[which]
+                File wybrana = new File(getAlbumStorageDir(getBaseContext()), stuff.get(which));
+
+              //  Toast.makeText(getBaseContext(), "Wysyłanie...", Toast.LENGTH_LONG).show();
+                // if (Postac.getInstance().imie_naziwsko.length() > 0) {
+                // String filename = "postac.xml";
+                // File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
+                //File filelocation = new File(getAlbumStorageDir(getBaseContext()), "postac.xml");
+                Uri path = Uri.fromFile(wybrana);
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+// set the type to 'email'
+                emailIntent.setType("vnd.android.cursor.dir/email");
+                String to[] = {""};
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+// the attachment
+                emailIntent.putExtra(Intent.EXTRA_STREAM, path);
+// the mail subject
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Zapis postaci: " + wybrana.getName().substring(0, wybrana.getName().length()-4));
+                startActivity(Intent.createChooser(emailIntent, "Wyślij postać emailem..."));
+                // } else {
+                // Toast.makeText(getBaseContext(), "Nadaj imie postaci", Toast.LENGTH_LONG).show();
+                //  }
+
+
             }
         });
         builder.show();
 
-//        Toast.makeText(getBaseContext(),"Wysyłanie...", Toast.LENGTH_LONG).show();
-//        if(Postac.getInstance().imie_naziwsko.length()>0){
-//            String filename="postac.xml";
-//            // File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
-//            File filelocation = new File(getAlbumStorageDir(this), "postac.xml");
-//            Uri path = Uri.fromFile(filelocation);
-//            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-//// set the type to 'email'
-//            emailIntent.setType("vnd.android.cursor.dir/email");
-//            String to[] = {"minesotha@gmail.com"};
-//            emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-//// the attachment
-//            emailIntent.putExtra(Intent.EXTRA_STREAM, path);
-//// the mail subject
-//            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Zapis postaci: " + Postac.getInstance().imie_naziwsko);
-//            startActivity(Intent.createChooser(emailIntent , "Send email..."));
-//        }
-//        else{
-//            Toast.makeText(getBaseContext(),"Nadaj imie postaci", Toast.LENGTH_LONG).show();
-//        }
 
     }
 }
