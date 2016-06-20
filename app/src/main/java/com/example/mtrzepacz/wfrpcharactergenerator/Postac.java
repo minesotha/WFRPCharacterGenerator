@@ -44,23 +44,42 @@ public final class Postac {
         Postac.getInstance().miejsce_urodzenia=" ";
         Postac.getInstance().znaki_szczegolne=" ";
         Postac.getInstance().znak_gwiezdny=" ";
-        Postac.getInstance().walkaWrecz = new CechaGlowna(NazwyCech.walkaWrecz,0,0);
-        Postac.getInstance().umiejetnosciStrzeleckie = new CechaGlowna(NazwyCech.umiejetnosciStrzeleckie,0,0);
-        Postac.getInstance().krzepa = new CechaGlowna(NazwyCech.krzepa,0,0);
-        Postac.getInstance().odpornosc = new CechaGlowna(NazwyCech.odpornosc,0,0);
-        Postac.getInstance().zrecznosc = new CechaGlowna(NazwyCech.zrecznosc,0,0);
-        Postac.getInstance().inteligencja = new CechaGlowna(NazwyCech.inteligencja,0,0);
-        Postac.getInstance().silaWoli = new CechaGlowna(NazwyCech.silaWoli,0,0);
-        Postac.getInstance().oglada = new CechaGlowna(NazwyCech.oglada,0,0);
 
-        Postac.getInstance().ataki = new CechaDrugorzedna(NazwyCech.ataki,0,0);
-        Postac.getInstance().zywotnosc = new CechaDrugorzedna(NazwyCech.zywotnosc,0,0);
-        Postac.getInstance().sila = new CechaDrugorzedna(NazwyCech.sila,0,0);
-        Postac.getInstance().wytrzymalosc= new CechaDrugorzedna(NazwyCech.wytrzymalosc,0,0);
-        Postac.getInstance().szybkosc= new CechaDrugorzedna(NazwyCech.szybkosc,0,0);
-        Postac.getInstance().magia = new CechaDrugorzedna(NazwyCech.magia,0,0);
-        Postac.getInstance().punktyObledu = new CechaDrugorzedna(NazwyCech.punktyObledu,0,0);
-        Postac.getInstance().punktyPrzeznaczenia= new CechaDrugorzedna(NazwyCech.punktyPrzeznaczenia,0,0);
+        Postac.getInstance().walkaWrecz = 0;
+        Postac.getInstance().umiejetnosciStrzeleckie = 0;
+        Postac.getInstance().krzepa = 0;
+        Postac.getInstance().odpornosc = 0;
+        Postac.getInstance().zrecznosc = 0;
+        Postac.getInstance().inteligencja = 0;
+        Postac.getInstance().silaWoli = 0;
+        Postac.getInstance().oglada = 0;
+
+        Postac.getInstance().walkaWreczPlus = 0;
+        Postac.getInstance().umiejetnosciStrzeleckiePlus= 0;
+        Postac.getInstance().krzepaPlus = 0;
+        Postac.getInstance().odpornoscPlus = 0;
+        Postac.getInstance().zrecznoscPlus = 0;
+        Postac.getInstance().inteligencjaPlus = 0;
+        Postac.getInstance().silaWoliPlus = 0;
+        Postac.getInstance().ogladaPlus = 0;
+
+        Postac.getInstance().ataki = 0;
+        Postac.getInstance().zywotnosc = 0;
+        Postac.getInstance().sila = 0;
+        Postac.getInstance().wytrzymalosc= 0;
+        Postac.getInstance().szybkosc= 0;
+        Postac.getInstance().magia = 0;
+        Postac.getInstance().punktyObledu = 0;
+        Postac.getInstance().punktyPrzeznaczenia= 0;
+
+        Postac.getInstance().atakiPlus = 0;
+        Postac.getInstance().zywotnoscPlus = 0;
+        Postac.getInstance().silaPlus = 0;
+        Postac.getInstance().wytrzymaloscPlus= 0;
+        Postac.getInstance().szybkoscPlus= 0;
+        Postac.getInstance().magiaPlus = 0;
+        Postac.getInstance().punktyObleduPlus = 0;
+        Postac.getInstance().punktyPrzeznaczeniaPlus= 0;
     }
 
     //podstawowe info
@@ -101,56 +120,111 @@ public final class Postac {
 
     //Cechy główne
     /**walka wręcz*/
-    //@Element
-    public  CechaGlowna walkaWrecz;
+    @Element
+    public  int walkaWrecz;
     /** umiejętności strzeleckie*/
-    //@Element
-    public  CechaGlowna umiejetnosciStrzeleckie;
+  @Element
+    public  int umiejetnosciStrzeleckie;
     /** krzepa */
-    //@Element
-    public  CechaGlowna krzepa;
+    @Element
+    public  int krzepa;
     /** odporność */
-    //@Element
-    public   CechaGlowna odpornosc;
+    @Element
+    public   int odpornosc;
     /** zręcznosć */
-   // @Element
-    public    CechaGlowna zrecznosc;
+    @Element
+    public    int zrecznosc;
     /** inteligencja */
-   // @Element
-    public   CechaGlowna inteligencja;
+    @Element
+    public   int inteligencja;
     /** siła woli */
-   // @Element
-    public   CechaGlowna silaWoli;
+    @Element
+    public   int silaWoli;
     /** ogłada */
-   // @Element
-    public   CechaGlowna oglada;
+    @Element
+    public   int oglada;
+
+
+
+    //Cechy główne --- rozwiniecia
+    /**walka wręcz*/
+    @Element
+    public  int walkaWreczPlus;
+    /** umiejętności strzeleckie*/
+    @Element
+    public  int umiejetnosciStrzeleckiePlus;
+    /** krzepa */
+    @Element
+    public  int krzepaPlus;
+    /** odporność */
+    @Element
+    public   int odpornoscPlus;
+    /** zręcznosć */
+    @Element
+    public    int zrecznoscPlus;
+    /** inteligencja */
+    @Element
+    public   int inteligencjaPlus;
+    /** siła woli */
+    @Element
+    public   int silaWoliPlus;
+    /** ogłada */
+    @Element
+    public   int ogladaPlus;
 
 
     //cechy drugorzędne
     /** ataki */
-   // @Element
-    public CechaDrugorzedna ataki;
+   @Element
+    public int ataki;
     /** żywotność */
-   // @Element
-    public CechaDrugorzedna zywotnosc;
+    @Element
+    public int zywotnosc;
     /** siła */
-   // @Element
-    public CechaDrugorzedna sila;
+    @Element
+    public int sila;
     /** wytrzymalosc */
-    ///@Element
-    public CechaDrugorzedna wytrzymalosc;
+    @Element
+    public int wytrzymalosc;
     /**szybkosc */
-   // @Element
-    public CechaDrugorzedna szybkosc;
+   @Element
+    public int szybkosc;
     /**magia */
-  //  @Element
-    public CechaDrugorzedna magia;
+   @Element
+    public int magia;
     /** punkty obledu */
-  //  @Element
-    public CechaDrugorzedna punktyObledu;
+      @Element
+    public int punktyObledu;
     /** punkty przeznaczenia */
   //  @Element
-    public CechaDrugorzedna punktyPrzeznaczenia;
+    public int punktyPrzeznaczenia;
+
+    //cechy drugorzędne ---  rozwiniecia
+    /** ataki */
+    @Element
+    public int atakiPlus;
+    /** żywotność */
+    @Element
+    public int zywotnoscPlus;
+    /** siła */
+    @Element
+    public int silaPlus;
+    /** wytrzymalosc */
+    @Element
+    public int wytrzymaloscPlus;
+    /**szybkosc */
+    @Element
+    public int szybkoscPlus;
+    /**magia */
+    @Element
+    public int magiaPlus;
+    /** punkty obledu */
+    @Element
+    public int punktyObleduPlus;
+    /** punkty przeznaczenia */
+    //  @Element
+    public int punktyPrzeznaczeniaPlus;
+
 
 
     //umiejętności

@@ -98,7 +98,7 @@ public class MainMenu extends AppCompatActivity {
         final CharSequence[] postacie = stuff.toArray(new CharSequence[stuff.size()]);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Wybierz postać do wczytania:");
+        builder.setTitle("Wybierz postać do wysłania:");
         builder.setItems(postacie, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -114,17 +114,17 @@ public class MainMenu extends AppCompatActivity {
                     //Postac.getInstance().imie_naziwsko = prof.getNazwa();
                     Toast.makeText(getBaseContext(), "Wczytano postac: "+Postac.getInstance().imie_naziwsko, Toast.LENGTH_SHORT).show();
                     PodstawoweInfoPopulateFields();
+                    isFirstTime=false;
+                    viewFlipper.setInAnimation(getBaseContext(), R.anim.in_from_right);
+                    viewFlipper.setOutAnimation(getBaseContext(), R.anim.out_to_left);
+                    viewFlipper.showNext();
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
         builder.show();
-
-
-
-
-
 
     }
 

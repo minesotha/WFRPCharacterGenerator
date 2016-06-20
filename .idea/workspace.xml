@@ -33,6 +33,29 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="activity_main_menu.xml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml">
+                <provider editor-type-id="android-designer">
+                  <state />
+                </provider>
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="-0.8684211">
+                    <caret line="436" column="25" selection-start-line="436" selection-start-column="25" selection-end-line="436" selection-end-column="25" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -48,79 +71,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/MainMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6882591">
-              <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2994#3002#0" expanded="true" />
-                <element signature="e#3363#4356#0" expanded="true" />
-                <element signature="e#4355#4356#0" expanded="true" />
-                <element signature="e#12991#12999#0" expanded="true" />
-                <element signature="e#13359#14910#0" expanded="true" />
-                <element signature="e#14909#14910#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main_menu.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.9655173">
-              <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
-              <folding>
-                <element signature="e#272#305#0" expanded="true" />
-                <element signature="e#330#365#0" expanded="true" />
-                <element signature="e#391#426#0" expanded="true" />
-                <element signature="e#450#483#0" expanded="true" />
-                <element signature="e#1007#1040#0" expanded="true" />
-                <element signature="e#1073#1108#0" expanded="true" />
-                <element signature="e#1142#1177#0" expanded="true" />
-                <element signature="e#1209#1242#0" expanded="true" />
-                <element signature="e#2682#2702#0" expanded="true" />
-                <element signature="e#5142#5175#0" expanded="true" />
-                <element signature="e#5208#5243#0" expanded="true" />
-                <element signature="e#5277#5312#0" expanded="true" />
-                <element signature="e#5344#5377#0" expanded="true" />
-                <element signature="e#11220#11236#0" expanded="true" />
-                <element signature="e#18517#18550#0" expanded="true" />
-                <element signature="e#18583#18618#0" expanded="true" />
-                <element signature="e#18652#18687#0" expanded="true" />
-                <element signature="e#18719#18752#0" expanded="true" />
-                <element signature="e#31770#31803#0" expanded="true" />
-                <element signature="e#31836#31871#0" expanded="true" />
-                <element signature="e#31905#31940#0" expanded="true" />
-                <element signature="e#31972#32005#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Postac.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/Postac.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#526#527#0" expanded="true" />
                 <element signature="e#559#560#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CechaGlowna.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/CechaGlowna.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5774379">
+              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/MainMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="253" column="48" selection-start-line="253" selection-start-column="48" selection-end-line="253" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2994#3002#0" expanded="true" />
+                <element signature="e#3362#4614#0" expanded="true" />
+                <element signature="e#4613#4614#0" expanded="true" />
+                <element signature="e#13244#13252#0" expanded="true" />
+                <element signature="e#13612#15163#0" expanded="true" />
+                <element signature="e#15162#15163#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2107,7 +2096,6 @@
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/karta.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/CechaGlowna.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/NazwyCechGlownych.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/NazwyCech.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/CechaDrugorzedna.java" />
@@ -2139,9 +2127,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/anim/out_to_left.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ldltr-v21/values-ldltr-v21.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/Postac.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/CechaGlowna.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/Postac.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/MainMenu.java" />
       </list>
     </option>
@@ -2267,94 +2256,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="WFRPCharacterGenerator" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WFRPCharacterGenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WFRPCharacterGenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WFRPCharacterGenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WFRPCharacterGenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WFRPCharacterGenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wfrpcharactergenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WFRPCharacterGenerator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2601,7 +2502,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29477197" sideWeight="0.49234137" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6695096" sideWeight="0.48973143" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52025586" sideWeight="0.48973143" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26865673" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3259177" sideWeight="0.49573562" order="3" side_tool="false" content_ui="tabs" />
@@ -2610,13 +2511,13 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38539326" sideWeight="0.5134943" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6170678" sideWeight="0.48996654" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6167377" sideWeight="0.48996654" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3303671" sideWeight="0.4822443" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2489339" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31769723" sideWeight="0.51026857" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2677557" sideWeight="0.5100334" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38709676" sideWeight="0.4865057" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38709676" sideWeight="0.4865057" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2675,12 +2576,6 @@
           <line>54</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/MainMenu.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="44" />
     </breakpoint-manager>
@@ -2700,11 +2595,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2994#3002#0" expanded="true" />
-            <element signature="e#3363#4356#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#12991#12999#0" expanded="true" />
-            <element signature="e#13359#14910#0" expanded="true" />
-            <element signature="e#14909#14910#0" expanded="true" />
+            <element signature="e#3362#4614#0" expanded="true" />
+            <element signature="e#4613#4614#0" expanded="true" />
+            <element signature="e#13244#13252#0" expanded="true" />
+            <element signature="e#13612#15163#0" expanded="true" />
+            <element signature="e#15162#15163#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2716,11 +2611,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2994#3002#0" expanded="true" />
-            <element signature="e#3363#4356#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#12991#12999#0" expanded="true" />
-            <element signature="e#13359#14910#0" expanded="true" />
-            <element signature="e#14909#14910#0" expanded="true" />
+            <element signature="e#3362#4614#0" expanded="true" />
+            <element signature="e#4613#4614#0" expanded="true" />
+            <element signature="e#13244#13252#0" expanded="true" />
+            <element signature="e#13612#15163#0" expanded="true" />
+            <element signature="e#15162#15163#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2732,11 +2627,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2994#3002#0" expanded="true" />
-            <element signature="e#3363#4356#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#12991#12999#0" expanded="true" />
-            <element signature="e#13359#14910#0" expanded="true" />
-            <element signature="e#14909#14910#0" expanded="true" />
+            <element signature="e#3362#4614#0" expanded="true" />
+            <element signature="e#4613#4614#0" expanded="true" />
+            <element signature="e#13244#13252#0" expanded="true" />
+            <element signature="e#13612#15163#0" expanded="true" />
+            <element signature="e#15162#15163#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2881,13 +2776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/CechaGlowna.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/NazwyCech.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.69164884">
@@ -2995,60 +2883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/Postac.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9655173">
-          <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
-          <folding>
-            <element signature="e#272#305#0" expanded="true" />
-            <element signature="e#330#365#0" expanded="true" />
-            <element signature="e#391#426#0" expanded="true" />
-            <element signature="e#450#483#0" expanded="true" />
-            <element signature="e#1007#1040#0" expanded="true" />
-            <element signature="e#1073#1108#0" expanded="true" />
-            <element signature="e#1142#1177#0" expanded="true" />
-            <element signature="e#1209#1242#0" expanded="true" />
-            <element signature="e#2682#2702#0" expanded="true" />
-            <element signature="e#5142#5175#0" expanded="true" />
-            <element signature="e#5208#5243#0" expanded="true" />
-            <element signature="e#5277#5312#0" expanded="true" />
-            <element signature="e#5344#5377#0" expanded="true" />
-            <element signature="e#11220#11236#0" expanded="true" />
-            <element signature="e#18517#18550#0" expanded="true" />
-            <element signature="e#18583#18618#0" expanded="true" />
-            <element signature="e#18652#18687#0" expanded="true" />
-            <element signature="e#18719#18752#0" expanded="true" />
-            <element signature="e#31770#31803#0" expanded="true" />
-            <element signature="e#31836#31871#0" expanded="true" />
-            <element signature="e#31905#31940#0" expanded="true" />
-            <element signature="e#31972#32005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/AndroidSDK/sources/android-23/android/widget/Toast.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72275335">
@@ -3059,16 +2893,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6882591">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="253" column="48" selection-start-line="253" selection-start-column="48" selection-end-line="253" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2994#3002#0" expanded="true" />
-            <element signature="e#3363#4356#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#12991#12999#0" expanded="true" />
-            <element signature="e#13359#14910#0" expanded="true" />
-            <element signature="e#14909#14910#0" expanded="true" />
+            <element signature="e#3362#4614#0" expanded="true" />
+            <element signature="e#4613#4614#0" expanded="true" />
+            <element signature="e#13244#13252#0" expanded="true" />
+            <element signature="e#13612#15163#0" expanded="true" />
+            <element signature="e#15162#15163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8684211">
+          <caret line="436" column="25" selection-start-line="436" selection-start-column="25" selection-end-line="436" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55258125">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/Postac.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mtrzepacz/wfrpcharactergenerator/CechaGlowna.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5774379">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
