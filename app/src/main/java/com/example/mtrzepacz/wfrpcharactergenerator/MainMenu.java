@@ -1,5 +1,6 @@
 package com.example.mtrzepacz.wfrpcharactergenerator;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -160,10 +163,15 @@ public class MainMenu extends AppCompatActivity {
     }
 
 
+
+
+
     public boolean onTouchEvent(MotionEvent touchevent) {
         switch (touchevent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: {
+                PodstawoweInfoApplyChanges();
+                UpdateFinalFields();
                 lastX = touchevent.getX();
                 break;
             }
@@ -219,6 +227,8 @@ public class MainMenu extends AppCompatActivity {
     private void AfterMove(){
         switch(viewFlipper.getDisplayedChild()){
             case 0:
+                ((InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE))
+                        .toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
                 break;
             case 1:
                 break;
@@ -229,7 +239,7 @@ public class MainMenu extends AppCompatActivity {
         }
     }
 
-
+9
 
 
     //podstawoe info
@@ -278,6 +288,125 @@ public class MainMenu extends AppCompatActivity {
         currText.setText(Postac.getInstance().znak_gwiezdny);
         currText = (EditText) findViewById(R.id.znakiSzczeg);
         currText.setText(Postac.getInstance().znaki_szczegolne);
+
+
+        //cechy1
+        currText = (EditText) findViewById(R.id.baseWW);
+        currText.setText(String.valueOf(Postac.getInstance().walkaWrecz));
+
+        currText = (EditText) findViewById(R.id.baseUS);
+        currText.setText(String.valueOf(Postac.getInstance().umiejetnosciStrzeleckie));
+
+        currText = (EditText) findViewById(R.id.baseK);
+        currText.setText(String.valueOf(Postac.getInstance().krzepa));
+
+        currText = (EditText) findViewById(R.id.baseOdp);
+        currText.setText(String.valueOf(Postac.getInstance().odpornosc));
+
+        currText = (EditText) findViewById(R.id.baseZr);
+        currText.setText(String.valueOf(Postac.getInstance().zrecznosc));
+
+        currText = (EditText) findViewById(R.id.baseInt);
+        currText.setText(String.valueOf(Postac.getInstance().inteligencja));
+
+        currText = (EditText) findViewById(R.id.baseSW);
+        currText.setText(String.valueOf(Postac.getInstance().silaWoli));
+
+        currText = (EditText) findViewById(R.id.baseOgd);
+        currText.setText(String.valueOf(Postac.getInstance().oglada));
+
+
+
+
+
+
+        //cechy2
+
+        currText = (EditText) findViewById(R.id.baseA);
+        currText.setText(String.valueOf(Postac.getInstance().ataki));
+
+        currText = (EditText) findViewById(R.id.baseZyw);
+        currText.setText(String.valueOf(Postac.getInstance().zywotnosc));
+
+
+
+        currText = (EditText) findViewById(R.id.baseWt);
+        currText.setText(String.valueOf(Postac.getInstance().wytrzymalosc));
+
+        currText = (EditText) findViewById(R.id.baseSzy);
+        currText.setText(String.valueOf(Postac.getInstance().szybkosc));
+
+        currText = (EditText) findViewById(R.id.baseMag);
+        currText.setText(String.valueOf(Postac.getInstance().magia));
+
+        currText = (EditText) findViewById(R.id.basePO);
+        currText.setText(String.valueOf(Postac.getInstance().punktyObledu));
+
+        currText = (EditText) findViewById(R.id.basePP);
+        currText.setText(String.valueOf(Postac.getInstance().punktyPrzeznaczenia));
+
+        UpdateFinalFields();
+    }
+
+
+    void UpdateFinalFields(){
+
+
+        EditText currText = (EditText) findViewById(R.id.sumWW);
+        currText.setText(String.valueOf(Postac.getInstance().walkaWrecz+Postac.getInstance().walkaWreczPlus));
+
+        currText = (EditText) findViewById(R.id.sumUS);
+        currText.setText(String.valueOf(Postac.getInstance().umiejetnosciStrzeleckie+Postac.getInstance().umiejetnosciStrzeleckiePlus));
+
+        currText = (EditText) findViewById(R.id.sumK);
+        currText.setText(String.valueOf(Postac.getInstance().krzepa+Postac.getInstance().krzepaPlus));
+
+        currText = (EditText) findViewById(R.id.sumOdp);
+        currText.setText(String.valueOf(Postac.getInstance().odpornosc+Postac.getInstance().odpornoscPlus));
+
+        currText = (EditText) findViewById(R.id.sumZr);
+        currText.setText(String.valueOf(Postac.getInstance().zrecznosc+Postac.getInstance().zrecznoscPlus));
+
+        currText = (EditText) findViewById(R.id.sumInt);
+        currText.setText(String.valueOf(Postac.getInstance().inteligencja+Postac.getInstance().inteligencjaPlus));
+
+        currText = (EditText) findViewById(R.id.sumSW);
+        currText.setText(String.valueOf(Postac.getInstance().silaWoli+Postac.getInstance().silaWoliPlus));
+
+        currText = (EditText) findViewById(R.id.sumOgd);
+        currText.setText(String.valueOf(Postac.getInstance().oglada+Postac.getInstance().ogladaPlus));
+
+
+        //cechy2 ---bonusy
+        currText = (EditText) findViewById(R.id.currA);
+        currText.setText(String.valueOf(Postac.getInstance().ataki+Postac.getInstance().atakiPlus));
+
+        currText = (EditText) findViewById(R.id.currZyw);
+        currText.setText(String.valueOf(Postac.getInstance().zywotnosc+Postac.getInstance().zywotnoscPlus));
+
+
+
+        currText = (EditText) findViewById(R.id.currSzy);
+        currText.setText(String.valueOf(Postac.getInstance().szybkosc+Postac.getInstance().szybkoscPlus));
+
+        currText = (EditText) findViewById(R.id.currMag);
+        currText.setText(String.valueOf(Postac.getInstance().magia+Postac.getInstance().magiaPlus));
+
+        currText = (EditText) findViewById(R.id.currPO);
+        currText.setText(String.valueOf(Postac.getInstance().punktyObledu+Postac.getInstance().punktyObleduPlus));
+
+        currText = (EditText) findViewById(R.id.currPP);
+        currText.setText(String.valueOf(Postac.getInstance().punktyPrzeznaczenia+Postac.getInstance().punktyPrzeznaczeniaPlus));
+
+
+
+        currText = (EditText) findViewById(R.id.baseS);
+        EditText krzepa = (EditText)findViewById(R.id.sumK);
+        currText.setText(krzepa.getText().subSequence(0, 1));
+
+        currText = (EditText) findViewById(R.id.baseWt);
+        EditText odpornosc = (EditText)findViewById(R.id.sumOdp);
+        currText.setText(odpornosc.getText().subSequence(0, 1));
     }
 
     void PodstawoweInfoApplyChanges() {
@@ -345,10 +474,57 @@ public class MainMenu extends AppCompatActivity {
         Postac.getInstance().znaki_szczegolne = currText.getText().toString();
 
 
+        //cechy1
+        currText = (EditText) findViewById(R.id.baseWW);
+        Postac.getInstance().walkaWrecz = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseUS);
+        Postac.getInstance().umiejetnosciStrzeleckie = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseK);
+        Postac.getInstance().krzepa = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseOdp);
+        Postac.getInstance().odpornosc = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseZr);
+        Postac.getInstance().zrecznosc = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseInt);
+        Postac.getInstance().inteligencja = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseSW);
+        Postac.getInstance().silaWoli = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseOgd);
+        Postac.getInstance().oglada = Integer.parseInt(currText.getText().toString());
+
+        //cechy2
+        currText = (EditText) findViewById(R.id.baseA);
+        Postac.getInstance().ataki = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseZyw);
+        Postac.getInstance().zywotnosc = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseS);
+        Postac.getInstance().sila = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseWt);
+        Postac.getInstance().wytrzymalosc = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseSzy);
+        Postac.getInstance().szybkosc = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.baseMag);
+        Postac.getInstance().magia = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.basePO);
+        Postac.getInstance().punktyObledu = Integer.parseInt(currText.getText().toString());
+
+        currText = (EditText) findViewById(R.id.basePP);
+        Postac.getInstance().punktyPrzeznaczenia = Integer.parseInt(currText.getText().toString());
+
     }
-
-
-
 
 
     public void Wyslij_click(View view){

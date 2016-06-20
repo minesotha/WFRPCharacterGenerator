@@ -801,7 +801,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:ems="2"
-                            android:id="@+id/BaseŻyw"
+                            android:id="@+id/baseZyw"
                             android:text="0" />
 
                         <TextView
