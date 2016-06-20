@@ -14,26 +14,7 @@ public final class Postac {
     //konstruktor
     private static Postac instance = null;
     protected Postac(){
-        walkaWrecz = new CechaGlowna(NazwyCech.walkaWrecz,0,0);
-        umiejetnosciStrzeleckie = new CechaGlowna(NazwyCech.umiejetnosciStrzeleckie,0,0);
-        krzepa = new CechaGlowna(NazwyCech.krzepa,0,0);
-        odpornosc = new CechaGlowna(NazwyCech.odpornosc,0,0);
-        zrecznosc = new CechaGlowna(NazwyCech.zrecznosc,0,0);
-        inteligencja = new CechaGlowna(NazwyCech.inteligencja,0,0);
-        silaWoli = new CechaGlowna(NazwyCech.silaWoli,0,0);
-        oglada = new CechaGlowna(NazwyCech.oglada,0,0);
 
-        ataki = new CechaDrugorzedna(NazwyCech.ataki,0,0);
-        zywotnosc = new CechaDrugorzedna(NazwyCech.zywotnosc,0,0);
-        sila = new CechaDrugorzedna(NazwyCech.sila,0,0);
-        wytrzymalosc= new CechaDrugorzedna(NazwyCech.wytrzymalosc,0,0);
-        szybkosc= new CechaDrugorzedna(NazwyCech.szybkosc,0,0);
-        magia = new CechaDrugorzedna(NazwyCech.magia,0,0);
-        punktyObledu = new CechaDrugorzedna(NazwyCech.punktyObledu,0,0);
-        punktyPrzeznaczenia= new CechaDrugorzedna(NazwyCech.punktyPrzeznaczenia,0,0);
-
-
-        //TODO - losowane rzeczy?
     }
     public static Postac getInstance(){
         if(instance==null){
@@ -41,25 +22,28 @@ public final class Postac {
         }
         return instance;
     }
+    public static void setInstance(Postac postac){
+        instance = postac;
+    }
 
     public static void Wyczysc(){
 
-        Postac.getInstance().imie_naziwsko="";
-        Postac.getInstance().rasa="";
-        Postac.getInstance().profesja="";
-        Postac.getInstance().poprzedniaprofesja="";
+        Postac.getInstance().imie_naziwsko=" ";
+        Postac.getInstance().rasa=" ";
+        Postac.getInstance().profesja=" ";
+        Postac.getInstance().poprzedniaprofesja=" ";
         Postac.getInstance().expAll =0;
         Postac.getInstance().expCurrent=0;
         Postac.getInstance().wiek=0;
-        Postac.getInstance().kolor_wlosow="";
-        Postac.getInstance().kolor_oczu="";
+        Postac.getInstance().kolor_wlosow=" ";
+        Postac.getInstance().kolor_oczu=" ";
         Postac.getInstance().czyMężczyzna=false;
         Postac.getInstance().waga=0;
         Postac.getInstance().wzrost=0;
-        Postac.getInstance().rodzeństwo="";
-        Postac.getInstance().miejsce_urodzenia="";
-        Postac.getInstance().znaki_szczegolne="";
-        Postac.getInstance().znak_gwiezdny="";
+        Postac.getInstance().rodzeństwo=" ";
+        Postac.getInstance().miejsce_urodzenia=" ";
+        Postac.getInstance().znaki_szczegolne=" ";
+        Postac.getInstance().znak_gwiezdny=" ";
         Postac.getInstance().walkaWrecz = new CechaGlowna(NazwyCech.walkaWrecz,0,0);
         Postac.getInstance().umiejetnosciStrzeleckie = new CechaGlowna(NazwyCech.umiejetnosciStrzeleckie,0,0);
         Postac.getInstance().krzepa = new CechaGlowna(NazwyCech.krzepa,0,0);
@@ -81,91 +65,91 @@ public final class Postac {
 
     //podstawowe info
     @Element
-    public String imie_naziwsko="";
+    public String imie_naziwsko;//=" ";
     @Element
-    public String rasa="";
+    public String rasa;//=" ";
     @Element
-    public String profesja="";
+    public String profesja;//=" ";
     @Element
-    public String poprzedniaprofesja="";
+    public String poprzedniaprofesja;//=" ";
     @Element
-    public int expAll =0;
+    public int expAll;// =0;
     @Element
-    public int expCurrent=0;
+    public int expCurrent;//=0;
 
     //dodatekowe info
     @Element
-    public int wiek=0;
+    public int wiek;//=0;
     @Element
-    public String kolor_wlosow="";
+    public String kolor_wlosow;//=" ";
     @Element
-    public String kolor_oczu="";
+    public String kolor_oczu;//= " ";
     @Element
-    public Boolean czyMężczyzna=false;
+    public Boolean czyMężczyzna;//=false;
     @Element
-    public int waga=0;
+    public int waga;//=0;
     @Element
-    public  int wzrost=0;
+    public  int wzrost;//=0;
     @Element
-    public  String rodzeństwo="";
+    public  String rodzeństwo;//=" ";
     @Element
-    public  String miejsce_urodzenia="";
+    public  String miejsce_urodzenia;//=" ";
     @Element
-    public  String znaki_szczegolne="";
+    public  String znaki_szczegolne;//=" ";
     @Element
-    public  String znak_gwiezdny="";
+    public  String znak_gwiezdny;//=" ";
 
     //Cechy główne
     /**walka wręcz*/
-    @Element
+    //@Element
     public  CechaGlowna walkaWrecz;
     /** umiejętności strzeleckie*/
-    @Element
+    //@Element
     public  CechaGlowna umiejetnosciStrzeleckie;
     /** krzepa */
-    @Element
+    //@Element
     public  CechaGlowna krzepa;
     /** odporność */
-    @Element
+    //@Element
     public   CechaGlowna odpornosc;
     /** zręcznosć */
-    @Element
+   // @Element
     public    CechaGlowna zrecznosc;
     /** inteligencja */
-    @Element
+   // @Element
     public   CechaGlowna inteligencja;
     /** siła woli */
-    @Element
+   // @Element
     public   CechaGlowna silaWoli;
     /** ogłada */
-    @Element
+   // @Element
     public   CechaGlowna oglada;
 
 
     //cechy drugorzędne
     /** ataki */
-    @Element
+   // @Element
     public CechaDrugorzedna ataki;
     /** żywotność */
-    @Element
+   // @Element
     public CechaDrugorzedna zywotnosc;
     /** siła */
-    @Element
+   // @Element
     public CechaDrugorzedna sila;
     /** wytrzymalosc */
-    @Element
+    ///@Element
     public CechaDrugorzedna wytrzymalosc;
     /**szybkosc */
-    @Element
+   // @Element
     public CechaDrugorzedna szybkosc;
     /**magia */
-    @Element
+  //  @Element
     public CechaDrugorzedna magia;
     /** punkty obledu */
-    @Element
+  //  @Element
     public CechaDrugorzedna punktyObledu;
     /** punkty przeznaczenia */
-    @Element
+  //  @Element
     public CechaDrugorzedna punktyPrzeznaczenia;
 
 
