@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,13 +30,15 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainMenu extends AppCompatActivity {
-
+    private static String DB_NAME ="profesje";
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -45,12 +48,15 @@ public class MainMenu extends AppCompatActivity {
     ViewFlipper viewFlipper;
     private float lastX;
     boolean isFirstTime=true;
+    DatabaseHelper dh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
+       dh = new DatabaseHelper(getBaseContext());
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -64,6 +70,33 @@ public class MainMenu extends AppCompatActivity {
         viewFlipper.setInAnimation(this, R.anim.in_from_right);
         viewFlipper.setOutAnimation(this, R.anim.out_to_left);
         viewFlipper.showNext();
+
+        //test
+
+        DataHelper myDbHelper;
+        myDbHelper = new DataHelper(this);
+
+        try {
+
+            myDbHelper.createDataBase();
+
+        } catch (IOException ioe) {
+
+            throw new Error("Unable to create database");
+
+        }
+
+        try {
+
+            myDbHelper.openDataBase();
+
+        }catch(SQLException sqle){
+
+            //throw sqle;
+
+        }
+
+
 //        Intent i = new Intent(MainMenu.this, PodstawoweInfo.class);
 //        startActivity(i);
     }
@@ -87,8 +120,6 @@ public class MainMenu extends AppCompatActivity {
 
     public void loadChara_click(View v) {
         Postac.Wyczysc();
-
-
 
         File f = getAlbumStorageDir(this);
         File file[] = f.listFiles();
@@ -239,7 +270,7 @@ public class MainMenu extends AppCompatActivity {
         }
     }
 
-9
+
 
 
     //podstawoe info
