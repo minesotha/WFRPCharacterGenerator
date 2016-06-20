@@ -1,154 +1,144 @@
 package com.example.mtrzepacz.wfrpcharactergenerator;
-
-
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.sql.SQLException;
-
-public class DataHelper extends SQLiteOpenHelper{
-
-    //The Android's default system path of your application database.
-    private static String DB_PATH = "/data/data/com.example.mtrzepacz.wfrpcharactergenerator/databases/";
-
-    private static String DB_NAME = "profesje";
-
-    private SQLiteDatabase myDataBase;
-
+        import java.io.File;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.OutputStream;
+        import java.util.ArrayList;
+        import java.util.List;
+        import android.content.Context;
+        import android.database.Cursor;
+        import android.database.sqlite.SQLiteDatabase;
+        import android.database.sqlite.SQLiteException;
+        import android.database.sqlite.SQLiteOpenHelper;
+        import android.util.Log;
+public class DataHelper extends SQLiteOpenHelper {
+    private final static String TAG = "DatabaseHelper";
     private final Context myContext;
-
-    /**
-     * Constructor
-     * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
-     * @param context
-     */
-    public DataHelper(Context context) {
-
-        super(context, DB_NAME, null, 1);
+    private static final String DATABASE_NAME = "profesje.db";
+    private static final int DATABASE_VERSION = 1;
+    private String pathToSaveDBFile;
+    public DataHelper(Context context, String filePath) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.myContext = context;
+        pathToSaveDBFile = new StringBuffer(filePath).append("/").append(DATABASE_NAME).toString();
     }
-
-    /**
-     * Creates a empty database on the system and rewrites it with your own database.
-     * */
-    public void createDataBase() throws IOException{
-
+    public void prepareDatabase() throws IOException {
         boolean dbExist = checkDataBase();
-
-        if(dbExist){
-            //do nothing - database already exist
-        }else{
-
-            //By calling this method and empty database will be created into the default system path
-            //of your application so we are gonna be able to overwrite that database with our database.
-            this.getReadableDatabase();
-
-            try {
-
-                copyDataBase();
-
-            } catch (IOException e) {
-
-                throw new Error("Error copying database");
-
-            }
+        if(dbExist) {
+            Log.d(TAG, "Database exists.");
+           // int currentDBVersion = getVersionId();
+           // if (DATABASE_VERSION > currentDBVersion) {
+                Log.d(TAG, "Database version is higher than old.");
+                deleteDb();
+                try {
+                    copyDataBase();
+                } catch (IOException e) {
+                    Log.e(TAG, e.getMessage());
+                }
+         //   }
+       // } else {
+//            try {
+//                copyDataBase();
+//            } catch (IOException e) {
+//                Log.e(TAG, e.getMessage());
+//            }
         }
-
     }
-
-    /**
-     * Check if the database already exist to avoid re-copying the file each time you open the application.
-     * @return true if it exists, false if it doesn't
-     */
-    private boolean checkDataBase(){
-
-        SQLiteDatabase checkDB = null;
-
-        try{
-            String myPath = DB_PATH+DB_NAME;
-            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
-        }catch(SQLiteException e){
-
-            //database does't exist yet.
-
+    private boolean checkDataBase() {
+        boolean checkDB = false;
+        try {
+            File file = new File(pathToSaveDBFile);
+            checkDB = file.exists();
+        } catch(SQLiteException e) {
+            Log.d(TAG, e.getMessage());
         }
-
-        if(checkDB != null){
-
-            checkDB.close();
-
-        }
-
-        return checkDB != null ? true : false;
+        return checkDB;
     }
-
-    /**
-     * Copies your database from your local assets-folder to the just created empty database in the
-     * system folder, from where it can be accessed and handled.
-     * This is done by transfering bytestream.
-     * */
-    private void copyDataBase() throws IOException{
-
-        //Open your local db as the input stream
-        InputStream myInput = myContext.getAssets().open(DB_NAME);
-
-        // Path to the just created empty db
-        String outFileName = DB_PATH + DB_NAME;
-
-        //Open the empty db as the output stream
-        OutputStream myOutput = new FileOutputStream(outFileName);
-
-        //transfer bytes from the inputfile to the outputfile
+    private void copyDataBase() throws IOException {
+        OutputStream os = new FileOutputStream(pathToSaveDBFile);
+        InputStream is = myContext.getAssets().open(DATABASE_NAME);
         byte[] buffer = new byte[1024];
         int length;
-        while ((length = myInput.read(buffer))>0){
-            myOutput.write(buffer, 0, length);
+        while ((length = is.read(buffer)) > 0) {
+            os.write(buffer, 0, length);
         }
-
-        //Close the streams
-        myOutput.flush();
-        myOutput.close();
-        myInput.close();
-
+        is.close();
+        os.flush();
+        os.close();
     }
-
-    public void openDataBase() throws SQLException{
-
-        //Open the database
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
+    public void deleteDb() {
+        File file = new File(pathToSaveDBFile);
+        if(file.exists()) {
+            file.delete();
+            Log.d(TAG, "Database deleted.");
+        }
     }
-
-    @Override
-    public synchronized void close() {
-
-        if(myDataBase != null)
-            myDataBase.close();
-
-        super.close();
-
-    }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        Log.d(TAG, "onCreate");
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
     }
 
-    // Add your public helper methods to access and get content from the database.
-    // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
-    // to you to create adapters for your views.
 
+
+
+    public Profesja getProfesja(String nazwa) {
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(pathToSaveDBFile, null, SQLiteDatabase.OPEN_READONLY);
+        String query = "SELECT id,nazwa,czyPodstawowa,ww,us,k,odp,zr,inte,sw,ogd,a,zyw,szy,mag FROM Profesje  WHERE nazwa = ?";
+        Cursor cursor = db.rawQuery(query,  new String[] {nazwa});
+        List<Profesja> list = new ArrayList<Profesja>();
+        while(cursor.moveToNext()) {
+            Profesja prof = new Profesja();
+
+            prof.nazwaProfesji=cursor.getString(1);
+            prof.czyPodstawowa=cursor.getString(2);
+            prof.walkaWrecz=cursor.getString(3);
+            prof.umiejetnosciStrzeleckie=cursor.getString(4);
+            prof.krzepa=cursor.getString(5);
+            prof.odpornosc=cursor.getString(6);
+            prof.zrecznosc=cursor.getString(7);
+            prof.inteligencja=cursor.getString(8);
+            prof.silaWoli=cursor.getString(9);
+            prof.oglada=cursor.getString(10);
+            prof.ataki=cursor.getString(11);
+            prof.zywotnosc=cursor.getString(12);
+            prof.szybkosc=cursor.getString(13);
+            prof.magia=cursor.getString(14);
+
+            list.add(prof);
+        }
+        db.close();
+        return list.get(0);
+    }
+
+
+    public List<Profesja> getWszystkieProfesje() {
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(pathToSaveDBFile, null, SQLiteDatabase.OPEN_READONLY);
+        String query = "SELECT id,nazwa,czyPodstawowa,ww,us,k,odp,zr,inte,sw,ogd,a,zyw,szy,mag FROM Profesje";
+        Cursor cursor = db.rawQuery(query,  null);
+        List<Profesja> list = new ArrayList<Profesja>();
+        while(cursor.moveToNext()) {
+            Profesja prof = new Profesja();
+            prof.nazwaProfesji=cursor.getString(1);
+            list.add(prof);
+        }
+        db.close();
+        return list;
+    }
+
+
+
+
+    private int getVersionId() {
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(pathToSaveDBFile, null, SQLiteDatabase.OPEN_READONLY);
+        String query = "SELECT version_id FROM dbVersion";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        int v =  cursor.getInt(0);
+        db.close();
+        return v;
+    }
 }

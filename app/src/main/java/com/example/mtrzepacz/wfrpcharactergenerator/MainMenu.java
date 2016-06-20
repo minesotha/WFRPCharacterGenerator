@@ -48,7 +48,9 @@ public class MainMenu extends AppCompatActivity {
     ViewFlipper viewFlipper;
     private float lastX;
     boolean isFirstTime=true;
-    DatabaseHelper dh;
+    DataHelper dbHelper;
+    Profesja profesja;
+
 
 
     @Override
@@ -56,10 +58,24 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
-       dh = new DatabaseHelper(getBaseContext());
+       InitializeDB();
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    private void InitializeDB(){
+        //baza danych
+
+        dbHelper = new DataHelper(this, getFilesDir().getAbsolutePath());
+        try {
+            dbHelper.prepareDatabase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
 
     public void newChara_click(View v) {
@@ -71,30 +87,7 @@ public class MainMenu extends AppCompatActivity {
         viewFlipper.setOutAnimation(this, R.anim.out_to_left);
         viewFlipper.showNext();
 
-        //test
-
-        DataHelper myDbHelper;
-        myDbHelper = new DataHelper(this);
-
-        try {
-
-            myDbHelper.createDataBase();
-
-        } catch (IOException ioe) {
-
-            throw new Error("Unable to create database");
-
-        }
-
-        try {
-
-            myDbHelper.openDataBase();
-
-        }catch(SQLException sqle){
-
-            //throw sqle;
-
-        }
+        profesja= dbHelper.getProfesja("akolita");
 
 
 //        Intent i = new Intent(MainMenu.this, PodstawoweInfo.class);

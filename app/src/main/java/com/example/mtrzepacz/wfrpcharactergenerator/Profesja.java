@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 public class Profesja {
 
-    public String ProfesjaID="id";
+    public String id="id";
     public String nazwaProfesji="nazwa";
     public String czyPodstawowa="czyPodstawowa";
     //Cechy główne
