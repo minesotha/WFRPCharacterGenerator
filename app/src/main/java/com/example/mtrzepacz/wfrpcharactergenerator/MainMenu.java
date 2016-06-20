@@ -1,6 +1,8 @@
 package com.example.mtrzepacz.wfrpcharactergenerator;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -24,6 +26,9 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -316,26 +321,49 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void Wyslij_click(View view){
-        Toast.makeText(getBaseContext(),"Wysyłanie...", Toast.LENGTH_LONG).show();
-        if(Postac.getInstance().imie_naziwsko.length()>0){
-            String filename="postac.xml";
-            // File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
-            File filelocation = new File(getAlbumStorageDir(this), "postac.xml");
-            Uri path = Uri.fromFile(filelocation);
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-// set the type to 'email'
-            emailIntent.setType("vnd.android.cursor.dir/email");
-            String to[] = {"minesotha@gmail.com"};
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-// the attachment
-            emailIntent.putExtra(Intent.EXTRA_STREAM, path);
-// the mail subject
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Zapis postaci: " + Postac.getInstance().imie_naziwsko);
-            startActivity(Intent.createChooser(emailIntent , "Send email..."));
+
+       // CharSequence postacie[] = new CharSequence[]{};// {"red", "green", "blue", "black"};
+
+        File f = getAlbumStorageDir(this);
+        File file[] = f.listFiles();
+        List<String> stuff = new ArrayList<String>();
+        for (int i=0; i < file.length; i++)
+        {
+            stuff.add(file[i].getName());
         }
-        else{
-            Toast.makeText(getBaseContext(),"Nadaj imie postaci", Toast.LENGTH_LONG).show();
-        }
+
+        final CharSequence[] postacie = stuff.toArray(new CharSequence[stuff.size()]);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Wybierz postać do wczytania:");
+        builder.setItems(postacie, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+            }
+        });
+        builder.show();
+
+//        Toast.makeText(getBaseContext(),"Wysyłanie...", Toast.LENGTH_LONG).show();
+//        if(Postac.getInstance().imie_naziwsko.length()>0){
+//            String filename="postac.xml";
+//            // File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
+//            File filelocation = new File(getAlbumStorageDir(this), "postac.xml");
+//            Uri path = Uri.fromFile(filelocation);
+//            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+//// set the type to 'email'
+//            emailIntent.setType("vnd.android.cursor.dir/email");
+//            String to[] = {"minesotha@gmail.com"};
+//            emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+//// the attachment
+//            emailIntent.putExtra(Intent.EXTRA_STREAM, path);
+//// the mail subject
+//            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Zapis postaci: " + Postac.getInstance().imie_naziwsko);
+//            startActivity(Intent.createChooser(emailIntent , "Send email..."));
+//        }
+//        else{
+//            Toast.makeText(getBaseContext(),"Nadaj imie postaci", Toast.LENGTH_LONG).show();
+//        }
 
     }
 }
