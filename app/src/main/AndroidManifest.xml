@@ -15,9 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PodstawoweInfo" />
-        <activity android:name=".Cechy1" />
-        <activity android:name=".Cechy2" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -26,10 +23,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".TabbedCard"
-            android:label="@string/title_activity_tabbed_card"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

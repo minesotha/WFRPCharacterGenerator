@@ -44,8 +44,8 @@ public class MainMenu extends AppCompatActivity {
 
     public void newChara_click(View v) {
         Postac.Wyczysc();
-        Intent i = new Intent(MainMenu.this, PodstawoweInfo.class);
-        startActivity(i);
+//        Intent i = new Intent(MainMenu.this, PodstawoweInfo.class);
+//        startActivity(i);
     }
 
 
@@ -74,7 +74,7 @@ public class MainMenu extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        startActivity(new Intent(MainMenu.this, PodstawoweInfo.class));
+        //startActivity(new Intent(MainMenu.this, PodstawoweInfo.class));
 
     }
 
