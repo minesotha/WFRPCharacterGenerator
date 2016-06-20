@@ -115,15 +115,14 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
 
-    public List<Profesja> getWszystkieProfesje() {
+    public List<String> getWszystkieProfesje() {
         SQLiteDatabase db = SQLiteDatabase.openDatabase(pathToSaveDBFile, null, SQLiteDatabase.OPEN_READONLY);
         String query = "SELECT id,nazwa,czyPodstawowa,ww,us,k,odp,zr,inte,sw,ogd,a,zyw,szy,mag FROM Profesje";
         Cursor cursor = db.rawQuery(query,  null);
-        List<Profesja> list = new ArrayList<Profesja>();
+        List<String> list = new ArrayList<String>();
         while(cursor.moveToNext()) {
-            Profesja prof = new Profesja();
-            prof.nazwaProfesji=cursor.getString(1);
-            list.add(prof);
+           String str =cursor.getString(1);
+            list.add(str);
         }
         db.close();
         return list;

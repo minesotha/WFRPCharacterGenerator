@@ -184,7 +184,9 @@
                         <EditText
                             android:layout_width="211dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/profesja" />
+                            android:id="@+id/profesja"
+                            android:onClick="onProfesjaClick"
+                            android:clickable="true" />
                     </TableRow>
 
 
@@ -201,7 +203,9 @@
                         <EditText
                             android:layout_width="211dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/poprzedniaprofesja" />
+                            android:id="@+id/poprzedniaprofesja"
+                            android:onClick="onProfesjaClick"
+                            android:clickable="true" />
                     </TableRow>
 
 
@@ -544,9 +548,12 @@
                             android:id="@+id/baseK"
                             android:text="0" />
 
-                        <TextView
+
+                        <EditText
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="2"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:text="+0"
                             android:id="@+id/bonusK" />

@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -50,6 +51,7 @@ public class MainMenu extends AppCompatActivity {
     boolean isFirstTime=true;
     DataHelper dbHelper;
     Profesja profesja;
+    List<String> nazwyProfesji;
 
 
 
@@ -62,6 +64,10 @@ public class MainMenu extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        nazwyProfesji = dbHelper.getWszystkieProfesje();
+
+
     }
 
     private void InitializeDB(){
@@ -273,8 +279,10 @@ public class MainMenu extends AppCompatActivity {
         currText.setText(Postac.getInstance().imie_naziwsko);
         currText = (EditText) findViewById(R.id.rasa);
         currText.setText(Postac.getInstance().rasa);
+
         currText = (EditText) findViewById(R.id.profesja);
         currText.setText(Postac.getInstance().profesja);
+
         currText = (EditText) findViewById(R.id.poprzedniaprofesja);
         currText.setText(Postac.getInstance().poprzedniaprofesja);
         currText = (EditText) findViewById(R.id.currPD);
@@ -597,6 +605,30 @@ public class MainMenu extends AppCompatActivity {
         });
         builder.show();
 
+
+    }
+
+
+    public void onProfesjaClick(final View view) {
+
+        Utilis.hideKeyboard(this);
+
+        final CharSequence[] profesje = nazwyProfesji.toArray(new CharSequence[nazwyProfesji.size()]);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Wybierz profesje:");
+        builder.setItems(profesje, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on postacie[which]
+                String wybrana = nazwyProfesji.get(which);
+
+                EditText currText = (EditText)view;
+                currText.setText(wybrana);
+            }
+        });
+        Utilis.hideKeyboard(this);
+        builder.show();
 
     }
 }
