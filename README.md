@@ -1,6 +1,6 @@
 # WFRPCharacterGenerator
 
-Warhammer Fantasy Roleplay 2ed chaacter generator for Android (API 18)
+Warhammer Fantasy Roleplay 2ed character generator for Android (API 18)
 
 Features some tables, random statistics, SQLite professions database, saving and loading multiple characters and sending saved files by emails.
 
